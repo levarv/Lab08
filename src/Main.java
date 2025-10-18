@@ -1,14 +1,21 @@
-  //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.LinkedList;
+
+/**
+ * Title: Lab 08
+ * Date: 20251017
+ * @author Ronald
+ */
+
+
 public class Main {
     public static void main(String[] args) {
 
         //linked list created, numbers up to n added
         SgLinkedList list = new SgLinkedList();
-        int n = 1000;
-        for (int i = 2; i < n; ++i) {
+        int n = 2;
+        for (int i = 2; i <= n ; ++i) {
             if (primeCheck(i))
-                list.insert(i);
+                list.add(i);
         }
 
         //entries screened for a "3 * 10^(0)", a 3 in the "1's" place.
@@ -17,15 +24,15 @@ public class Main {
         SgLinkedList list2 = new SgLinkedList();
 
         while (list.hasNext()) {
-            numerator = list.pop();
+            numerator = list.remove();
             if (numerator % 10 == 3)
-                list2.insert(numerator);
+                list2.add(numerator);
         }
 
         // ∑(list2)
-        int sum = 0;
+        int sum = 0; 
         while (list2.hasNext())
-            sum += list2.pop();
+            sum += list2.remove();
 
         System.out.println(sum);
     }

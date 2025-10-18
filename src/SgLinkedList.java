@@ -1,4 +1,14 @@
+/**
+ * Title: Lab 08
+ * Date: 20251017
+ * @author Ronald
+ */
 
+
+/*
+ the directions call for a singly linked list, the LinkedList
+ included in the java SE library is doubly-linked I think
+ */
 public class SgLinkedList{
     Node head;
     Node tail;
@@ -18,10 +28,9 @@ public class SgLinkedList{
     return false;
     }
 
-    public void insert(int data) {
+    public void add(int data) {
 
         Node n = new Node(data);
-        n.next = null;
         if (head == null) {
             head = n;
             tail = n;
@@ -32,7 +41,7 @@ public class SgLinkedList{
 
 
     }
-    public int pop(){
+    public int remove(){
         if (head == null)
             return -1;
         int data = head.data;

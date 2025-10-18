@@ -1,3 +1,8 @@
+/**
+ * Title: Lab 08
+ * Date: 20251017
+ * @author Ronald
+ */
 
     public class Node {
         int data;
