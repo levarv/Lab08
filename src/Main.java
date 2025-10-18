@@ -12,32 +12,36 @@ public class Main {
 
         //linked list created, numbers up to n added
         SgLinkedList list = new SgLinkedList();
-        int n = 2;
+        int n = 30;
         for (int i = 2; i <= n ; ++i) {
             if (primeCheck(i))
                 list.add(i);
         }
 
-        //entries screened for a "3 * 10^(0)", a 3 in the "1's" place.
-        //entries added to list2
+        //entries screened for a "3"
+        //I couldn't think of a cool numeric way to do this :/
         int numerator = 0;
         SgLinkedList list2 = new SgLinkedList();
 
         while (list.hasNext()) {
             numerator = list.remove();
-            if (numerator % 10 == 3)
-                list2.add(numerator);
-        }
+                if(String.valueOf(numerator).contains("3"))
+                    list2.add(numerator);
+            }
 
-        // ∑(list2)
+        // ∑(list2), completion of the lab process
         int sum = 0; 
         while (list2.hasNext())
             sum += list2.remove();
-
         System.out.println(sum);
     }
 
-    //prime detection of 'n' via Trial division
+    /**
+     * primeCheck</p>
+     * prime detection of 'n' via Trial division
+     * @param n number to be checked
+     * @return true if prime/ else false
+     */
     public static boolean primeCheck(int n){
         for (int i = 2; i <= Math.sqrt(n); ++i) {
             if (n % i == 0)
